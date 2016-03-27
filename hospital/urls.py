@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from Personas.views import RegistroPaciente, EditarPaciente, Home, Pacientes, DetallesPaciente
+from Personas.Pacientes.views import RegistroPaciente, EditarPaciente, Pacientes, DetallesPaciente
+from core.views import Home
 
 urlpatterns = patterns('',
     # Examples:
