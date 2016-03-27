@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from Personas.Pacientes.views import RegistroPaciente, EditarPaciente, Pacientes, DetallesPaciente
 from core.views import Home
+from Personas.Pacientes.views import RegistroPaciente, EditarPaciente, Pacientes, DetallesPaciente
+from Personas.Personal.views import RegistroDoctor
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,4 +16,5 @@ urlpatterns = patterns('',
     url(r'^pacientes/registro/$', RegistroPaciente.as_view(), name="registro-paciente"),
     url(r'^pacientes/editar/(?P<pk>[\d]+)/$', EditarPaciente.as_view(), name="registro-paciente"),
     url(r'^pacientes/(?P<pk>[\d]+)/$', DetallesPaciente.as_view(), name="detalles-paciente"),
+    url(r'^personal/doctores/registro/$', RegistroDoctor.as_view(), name="registro-doctor"),
 )
