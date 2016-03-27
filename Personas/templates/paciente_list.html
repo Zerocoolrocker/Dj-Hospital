@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+	<h3>Pacientes:</h3>
+	{% for i in object_list %}
+		<table>
+			<tr>
+				<td><label>Nombre:</label> {{i.nombre}}</td>
+				<td><label>Apellido:</label> {{i.apellido}}</td>
+				<td><label>Cedula:</label> {{i.cedula}}</td>
+			</tr>
+			<tr>
+				<td><label>Habitación:</label> {{i.habitacion}}</td>
+				<td><label>Ingreso:</label> {{i.fecha_ingreso}}</td>
+			</tr>
+			<tr>
+				<td><label>Diagnóstico:</label> {{i.diagnostico}}</td>
+			</tr>
+		</table>
+		<br><br>
+	{% endfor %}
+{% endblock %}
