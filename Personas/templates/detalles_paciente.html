@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+	<h1>Datos del paciente:</h1>
+	<table>
+		<tr>
+			<td><label>Nombre:</label> {{object.nombre}}</td>
+			<td><label>Apellido:</label> {{object.apellido}}</td>
+			<td><label>Identificación:</label> {{object.identificacion}}</td>
+		</tr>
+		<tr>
+			<td><label>Habitación:</label> {{object.habitacion}}</td>
+			<td><label>Ingreso:</label> {{object.fecha_ingreso}}</td>
+		</tr>
+		<tr>
+			<td><label>Diagnóstico:</label> {{object.diagnostico}}</td>
+		</tr>
+	</table>	
+{% endblock %}
