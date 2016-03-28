@@ -4,7 +4,7 @@ from core.views import Home
 from Personas.Pacientes.views import RegistroPaciente, EditarPaciente, Pacientes, DetallesPaciente
 from Personas.Personal.views import RegistroDoctor
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Examples:
     # url(r'^$', 'hospital.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -17,4 +17,4 @@ urlpatterns = patterns('',
     url(r'^pacientes/editar/(?P<pk>[\d]+)/$', EditarPaciente.as_view(), name="registro-paciente"),
     url(r'^pacientes/(?P<pk>[\d]+)/$', DetallesPaciente.as_view(), name="detalles-paciente"),
     url(r'^personal/doctores/registro/$', RegistroDoctor.as_view(), name="registro-doctor"),
-)
+]

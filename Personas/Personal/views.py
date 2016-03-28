@@ -1,4 +1,4 @@
-from django.views.generic.edit import CreateView
+from django.views.generic import CreateView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth.models import User
 from .models import Doctor
@@ -16,12 +16,7 @@ class RegistroDoctor(CreateView):
 
 
 	def form_valid(self, form):
-		cd = form.cleaned_data
-		user = User.objects.create_user(
-			cd["username"],
-			cd["email"],
-			cd["password"]
-		)
-		form.instance.usuario_id = user.id
-		form.instance.usuario = user
-		super(RegistroDoctor, self).form_valid(form)
+            cd = form.cleaned_data
+            user = User.objects.create_user(cd.get("username"),cd.get("email"),cd.get("password"))
+            form.instance.usuario = user
+            return super(RegistroDoctor, self).form_valid(form)
