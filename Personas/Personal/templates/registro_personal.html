@@ -7,9 +7,6 @@
 <form method="POST">
 	{% csrf_token %}
 	{{form.as_p}}
-	<label>Usuario:</label><input id="username" type="text">
-	<label>Email:</label><input id="email" type="text">
-	<label>Contraseña:</label><input id="pass" type="password">
 	<input type="submit" value="Guardar">
 </form>
 
